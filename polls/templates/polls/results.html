@@ -1,0 +1,21 @@
+<!-- <p>{{ question.text }}</p>
+
+<ul>
+{% for c in question.choise_set.all %}
+  <li>{{ c.text }}</li>
+{% endfor %}
+</ul> -->
+
+    <h3>{{ question.text }}</h3>
+
+    {% if question.choise_set.count %}
+
+      {% for c in question.choise_set.all %}
+      <p>{{ c.text }} {{ c.votes}}</p>
+      {% endfor %}
+
+    {% else %}
+
+      <p>No choises yet</p>
+
+    {% endif %}
